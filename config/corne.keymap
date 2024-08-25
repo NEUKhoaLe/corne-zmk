@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        DoubleColon: doubleColon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp COLON>;
+            label = "DOUBLECOLON";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -53,10 +62,10 @@
 
             display-name = "Raise";
             bindings = <
-&kp GRAVE  &kp EXCL   &kp AT    &kp HASH   &kp DLLR        &kp PRCNT           &kp CARET          &kp AMPS         &kp ASTERISK   &kp LPAR        &kp RPAR   &kp BSPC
-&trans     &kp TILDE  &kp HASH  &kp SLASH  &kp LEFT_BRACE  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp BACKSLASH  &kp MINUS       &kp PLUS   &kp PIPE
-&trans     &trans     &trans    &trans     &trans          &trans              &trans             &trans           &trans         &kp UNDERSCORE  &kp EQUAL  &trans
-                                &trans     &trans          &trans              &trans             &trans           &trans
+&kp GRAVE  &kp SQT          &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp PERIOD        &kp AMPERSAND  &DoubleColon  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT   &kp BSPC
+&trans     &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL          &kp HASH          &kp PIPE       &kp COLON     &kp BACKSLASH     &kp MINUS          &kp QUESTION  &trans
+&trans     &kp CARET        &kp SLASH      &kp ASTERISK      &kp BACKSLASH      &kp UNDERSCORE    &kp TILDE      &kp DOLLAR    &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp AT_SIGN   &trans
+                                           &trans            &trans             &trans            &trans         &trans        &trans
             >;
         };
 
